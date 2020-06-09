@@ -1,0 +1,38 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stuff", "stuff", "{1ABDD7C1-1F8D-402D-8692-3E4B66962DE0}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebus.Amqp", "Rebus.Amqp\Rebus.Amqp.csproj", "{60410ABA-5354-46E4-A6BC-6F99E2163AA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebus.Amqp.Tests", "Rebus.Amqp.Tests\Rebus.Amqp.Tests.csproj", "{B1400A1B-7424-4D80-8B65-5FA50B0F10A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60410ABA-5354-46E4-A6BC-6F99E2163AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60410ABA-5354-46E4-A6BC-6F99E2163AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60410ABA-5354-46E4-A6BC-6F99E2163AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60410ABA-5354-46E4-A6BC-6F99E2163AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1400A1B-7424-4D80-8B65-5FA50B0F10A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1400A1B-7424-4D80-8B65-5FA50B0F10A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1400A1B-7424-4D80-8B65-5FA50B0F10A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1400A1B-7424-4D80-8B65-5FA50B0F10A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79BF2890-8E3B-43F7-831A-24523B7E4C24}
+	EndGlobalSection
+EndGlobal
