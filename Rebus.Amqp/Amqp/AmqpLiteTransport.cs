@@ -28,7 +28,7 @@ namespace Rebus.Amqp
         /// </summary>
         public AmqpLiteTransport(string inputQueueName) : base(inputQueueName)
         {
-            amqpAddress = new AmqpLite.Address("amqp://10.6.46.150:61616");
+            amqpAddress = new AmqpLite.Address("rebustest.servicebus.windows.net", 5671, "rebustest", "SomeSecretKey");
             amqpConnection = new AmqpLite.Connection(amqpAddress);
             amqpSession = new AmqpLite.Session(amqpConnection);
 
@@ -57,8 +57,8 @@ namespace Rebus.Amqp
 
             if (msg == null) return null;
 
-            if (msg.Properties?.AbsoluteExpiryTime != DateTime.MinValue && msg.Properties?.AbsoluteExpiryTime > DateTime.Now) return null;
-
+            if (!(msg.Properties?.AbsoluteExpiryTime != DateTime.MinValue && msg.Properties?.AbsoluteExpiryTime.ToUniversalTime() > DateTime.Now.ToUniversalTime())) return null;
+            
             context.OnCompleted(async ctx =>
             {
                 amqpReceiver.Accept(msg);
@@ -66,12 +66,12 @@ namespace Rebus.Amqp
 
             context.OnAborted(async ctx =>
             {
-                amqpReceiver.Reject(msg);
+                amqpReceiver.Modify(msg, true);
             });
 
             context.OnDisposed(async ctx =>
             {
-                amqpReceiver.Reject(msg);
+                //amqpReceiver.Close();
             });
 
 
